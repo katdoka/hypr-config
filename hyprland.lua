@@ -365,9 +365,6 @@ end)
 
 
 
--- Screenshot shortcuts (detached execution)
-hl.bind("Print", hl.dsp.exec_cmd('bash -c "grim -g \\"$(slurp)\\" - | wl-copy"'))
-hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd('bash -c "grim -g \\"$(slurp)\\" - | wl-copy"'))
 
 -- Application Launcher (Super + Space)
 hl.bind("SUPER + SPACE", hl.dsp.exec_cmd("rofi -show drun"))
@@ -418,6 +415,7 @@ hl.config({
     },
 })
 
--- Screenshots
+
+-- Screenshots (Single instance)
 hl.bind("Print", hl.dsp.exec_cmd('bash -c "grim -g \\"$(slurp)\\" - | wl-copy"'))
 hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd('bash -c "grim -g \\"$(slurp)\\" - | wl-copy"'))
