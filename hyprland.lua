@@ -438,4 +438,4 @@ hl.window_rule({
     opacity = "0.88 0.78",
 })
 
-hl.bind("SUPER + M", hl.dsp.exec_cmd("hyprctl dispatch togglespecialworkspace music"))
+hl.bind("SUPER + M", hl.dsp.workspace.toggle_special("music"))
