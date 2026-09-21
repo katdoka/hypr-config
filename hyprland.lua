@@ -439,3 +439,6 @@ hl.window_rule({
 })
 
 hl.bind("SUPER + M", hl.dsp.workspace.toggle_special("music"))
+
+-- Mouse resize binding
+hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
