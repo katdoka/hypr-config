@@ -394,3 +394,30 @@ hl.monitor({
     position = "0x0",
     scale = 1,
 })
+
+---------------------------------------
+---- LOOK AND FEEL (GAPS & BLUR) ------
+---------------------------------------
+hl.config({
+    general = {
+        gaps_in = 5,
+        gaps_out = 12,
+        border_size = 2,
+        ["col.active_border"] = "rgba(7aa2f7ee)",
+        ["col.inactive_border"] = "rgba(414868aa)",
+        layout = "dwindle",
+    },
+    decoration = {
+        rounding = 10,
+        blur = {
+            enabled = true,
+            size = 6,
+            passes = 2,
+            new_optimizations = true,
+        },
+    },
+})
+
+-- Screenshots
+hl.bind("Print", hl.dsp.exec_cmd('bash -c "grim -g \\"$(slurp)\\" - | wl-copy"'))
+hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd('bash -c "grim -g \\"$(slurp)\\" - | wl-copy"'))
