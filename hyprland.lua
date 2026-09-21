@@ -257,7 +257,7 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
 local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
@@ -426,3 +426,16 @@ hl.bind("CTRL + SUPER + SHIFT + Z", hl.dsp.window.move({ workspace = "special:ma
 -- Screenshots (Windows muscle memory)
 hl.bind("Print", hl.dsp.exec_cmd('bash -c "grim -g \\"$(slurp)\\" - | wl-copy"'))
 hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd('bash -c "grim -g \\"$(slurp)\\" - | wl-copy"'))
+
+-- Floating music scratchpad rule
+hl.window_rule({
+    name = "music-scratchpad",
+    match = { class = "Spotify" },
+    workspace = "special:music",
+    float = true,
+    center = true,
+    size = "960 620",
+    opacity = "0.88 0.78",
+})
+
+hl.bind("SUPER + M", hl.dsp.exec_cmd("hyprctl dispatch togglespecialworkspace music"))
