@@ -279,8 +279,6 @@ for i = 1, 10 do
 end
 
 -- Example special workspace (scratchpad)
-hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
@@ -416,6 +414,16 @@ hl.config({
 })
 
 
--- Screenshots (Single instance)
+
+
+
+
+
+
+-- Scratchpad / Magic Workspace (Ctrl + Super + Z)
+hl.bind("CTRL + SUPER + Z", hl.dsp.workspace.toggle_special("magic"))
+hl.bind("CTRL + SUPER + SHIFT + Z", hl.dsp.window.move({ workspace = "special:magic" }))
+
+-- Screenshots (Windows muscle memory)
 hl.bind("Print", hl.dsp.exec_cmd('bash -c "grim -g \\"$(slurp)\\" - | wl-copy"'))
 hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd('bash -c "grim -g \\"$(slurp)\\" - | wl-copy"'))
