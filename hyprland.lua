@@ -255,6 +255,7 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw"))
 local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
 hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
@@ -359,6 +360,7 @@ hl.window_rule({
 hl.on("hyprland.start", function()
     hl.exec_cmd("killall swaybg; swaybg -o HDMI-A-1 -i /home/kat/Pictures/Wallpapers/made_in_abyss.jpg -m fill")
     hl.exec_cmd("/home/kat/.config/hypr/launch_waybar.sh")
+    hl.exec_cmd("killall swaync 2>/dev/null; swaync")
 end)
 
 
@@ -442,3 +444,4 @@ hl.bind("SUPER + M", hl.dsp.workspace.toggle_special("music"))
 
 -- Mouse resize binding
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+
