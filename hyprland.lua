@@ -448,11 +448,17 @@ hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 
 
--- Pipewire Volume Control Glass & Float
+
+
+
+
+
+-- Pipewire Volume Control Glass & Float Dropdown
 hl.window_rule({
-    name = "pwvucontrol-glass",
+    name = "pwvucontrol-dropdown",
     match = { class = "com.saivert.pwvucontrol" },
     float = true,
-    size = { 750, 520 },
-    opacity = 0.82,
+    size = { 780, 260 },
+    move = "1130 60",
+    opacity = 0.85,
 })
