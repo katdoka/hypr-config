@@ -445,3 +445,14 @@ hl.bind("SUPER + M", hl.dsp.workspace.toggle_special("music"))
 -- Mouse resize binding
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
+
+
+
+-- Pipewire Volume Control Glass & Float
+hl.window_rule({
+    name = "pwvucontrol-glass",
+    match = { class = "com.saivert.pwvucontrol" },
+    float = true,
+    size = { 750, 520 },
+    opacity = 0.82,
+})
